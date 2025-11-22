@@ -1,6 +1,7 @@
 // src/components/layout/Header.jsx
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 /**
  * Top navigation bar.
@@ -90,18 +91,21 @@ function Header({
           }}
           className="header__nav-desktop"
         >
-          <a href="/#hero" className="nav-link">
+          <HashLink smooth to="/#hero" className="nav-link">
             Home
-          </a>
-          <a href="/#features" className="nav-link">
+          </HashLink>
+
+          <HashLink smooth to="/#features" className="nav-link">
             Features
-          </a>
-          <a href="/#reserve" className="nav-link">
+          </HashLink>
+
+          <HashLink smooth to="/#reserve" className="nav-link">
             Storage
-          </a>
-          <a href="/#contact" className="nav-link">
+          </HashLink>
+
+          <HashLink smooth to="/#contact" className="nav-link">
             Contact
-          </a>
+          </HashLink>
           {isLoggedIn && (
             <Link
               to="/profile"
